@@ -1,0 +1,67 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  background-color: lightgrey;
+}
+header{
+  background-image: url("http://www.powerpointhintergrund.com/uploads/2017/05/80s-background-stock-footage-video-shutterstock-28.jpeg");
+}
+h1{
+  font-size: 12vw;
+  color: currentColor;
+  -webkit-text-stroke: 1px #cc73cf;
+}
+h2{
+  text-align: left;
+}
+img{
+  border: thin #cc73cf solid;
+}
+p{
+  text-align: center;
+}
+section{
+  text-align: center;
+}
+.navi{
+  display: none;
+}
+.fa{
+  color: white;
+  font-size: 5vw;
+}
+.fa-github-alt{
+  padding-right: 1vw;
+}
+.fa-linkedin-square{
+  padding-left: 1vw;
+}
+.fa-bars{
+  color: black;
+}
+@media all and (min-width: 800px) {
+  .fa-bars{
+    display: none;
+  }
+  .navi{
+    display: block;
+    margin-top: 2vh;
+    cursor: pointer;
+    font-size: 4vh;
+  }
+  section{
+    text-align: center;
+  }
+  h2{
+    display: inline-block;
+    font-size: 4vw;
+  }
+  header{
+    background-size: cover;
+    background-position: center;
+  }
+  .fa{
+    font-size: 2vw;
+  }
+}
