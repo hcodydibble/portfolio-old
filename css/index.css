@@ -13,6 +13,8 @@ h1{
   -webkit-text-stroke: 1px #cc73cf;
 }
 img{
+  width: 12vw;
+  max-width: 100vw;
   border: thin #cc73cf solid;
 }
 p{
