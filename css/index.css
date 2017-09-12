@@ -21,6 +21,9 @@ img{
 p{
   text-align: center;
 }
+section{
+  text-align: center;
+}
 .navi{
   display: none;
 }
@@ -36,4 +39,29 @@ p{
 }
 .fa-bars{
   color: black;
+}
+@media all and (min-width: 800px) {
+  .fa-bars{
+    display: none;
+  }
+  .navi{
+    display: block;
+    margin-top: 2vh;
+    cursor: pointer;
+    font-size: 4vh;
+  }
+  section{
+    text-align: center;
+  }
+  h2{
+    display: inline-block;
+    font-size: 4vw;
+  }
+  header{
+    background-size: cover;
+    background-position: center;
+  }
+  .fa{
+    font-size: 2vw;
+  }
 }
