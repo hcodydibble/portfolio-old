@@ -12,16 +12,10 @@ h1{
   color: currentColor;
   -webkit-text-stroke: 1px #cc73cf;
 }
-h2{
-  text-align: left;
-}
 img{
   border: thin #cc73cf solid;
 }
 p{
-  text-align: center;
-}
-section{
   text-align: center;
 }
 .navi{
@@ -49,9 +43,6 @@ section{
     margin-top: 2vh;
     cursor: pointer;
     font-size: 4vh;
-  }
-  section{
-    text-align: center;
   }
   h2{
     display: inline-block;
