@@ -21,7 +21,6 @@ $('#education').click(function(){
   educationArray.forEach(function(education){
     $('#theEducation').append(education.toHtml())
   })
-  // $('h2').css({'font-size':'3vw','color':'currentColor','-webkit-text-stroke':'1px #cc73cf','text-align':'center'})
 })
 
 $('#projects').click(function(){
