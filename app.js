@@ -1,5 +1,5 @@
 'use strict';
-var projectArray = [];
+var projectArray = [], educationArray = [];
 
 function Projects(projectData){
   this.name = projectData.name;
@@ -17,9 +17,11 @@ $('.fa-bars').click(function(){
 })
 
 $('#education').click(function(){
-  $('.replace').replaceWith('<h2>Education</h2>','<p>This will be my educational history!</p>')
-  $('.delete').remove()
-  $('h2').css({'font-size':'5vw','color':'currentColor','-webkit-text-stroke':'1px #cc73cf','text-align':'center'})
+  $('#stickHere').empty()
+  educationArray.forEach(function(education){
+    $('#theEducation').append(education.toHtml())
+  })
+  // $('h2').css({'font-size':'3vw','color':'currentColor','-webkit-text-stroke':'1px #cc73cf','text-align':'center'})
 })
 
 $('#projects').click(function(){
@@ -32,13 +34,24 @@ $('#projects').click(function(){
 })
 
 Projects.prototype.toHtml = function(){
-  var $newProject = $('#template').clone()
+  var $newProject = $('#projectTemplate').clone()
   $newProject.attr('id','')
   $newProject.find('.project a').attr('href',this.url).text(this.name)
   $newProject.find('#description').html(this.description)
   return $newProject
 }
+Education.prototype.toHtml = function(){
+  var $newEd = $('#edTemplate').clone()
+  $newEd.attr('id','')
+  $newEd.find('h2').text(this.name)
+  $newEd.find('.years').text(this.years)
+  $newEd.find('.study').text(this.study)
+  return $newEd
+}
 
 myProjects.forEach(function(projectData){
   projectArray.push(new Projects(projectData))
+})
+myEducation.forEach(function(educationData){
+  educationArray.push(new Education(educationData))
 })
