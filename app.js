@@ -2,14 +2,10 @@
 var projectArray = [], educationArray = [];
 
 function Projects(projectData){
-  this.name = projectData.name;
-  this.url = projectData.url;
-  this.description = projectData.description;
+  Object.assign(this, projectData)
 }
 function Education(edData){
-  this.name = edData.name;
-  this.years = edData.years;
-  this.study = edData.study;
+  Object.assign(this, edData)
 }
 
 $('.fa-bars').click(function(){
