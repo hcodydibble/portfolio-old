@@ -7,6 +7,9 @@ h2{
 section{
   text-align: center;
 }
+p{
+  text-align: center;
+}
 @media all and (min-width:800px) {
   section{
     text-align: center;
