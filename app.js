@@ -12,19 +12,21 @@ $('.fa-bars').click(function(){
 $('#education').click(function(){
   $('#stickHere').empty()
   $('#theProjects').empty()
+  $('#education').css('display','none')
   educationArray.forEach(function(education){
     $('#theEducation').append(education.toHtml())
   })
-  $('#theEducation').css('display','block')
+  $('#projects').css('display','block')
 })
 
 $('#projects').click(function(){
+  $('#projects').css('display','none')
   $('#stickHere').empty()
   $('#theEducation').empty()
   projectArray.forEach(function(project){
     $('#theProjects').append(project.toHtml())
   })
-  $('#theProjects').css('display','block')
+  $('#education').css('display','block')
   $('p').css({'padding-top':'1vh','margin-bottom':'1vh'})
   $('a').css('font-size','4vh')
 })
