@@ -44,9 +44,10 @@ Education.prototype.toHtml = function(){
   return $newEd
 }
 
-myProjects.forEach(function(projectData){
-  projectArray.push(new Projects(projectData))
-})
-myEducation.forEach(function(educationData){
-  educationArray.push(new Education(educationData))
+myInfo.forEach(function(info){
+  if(info.url){
+    projectArray.push(new Projects(info))
+  }else{
+    educationArray.push(new Education(info))
+  }
 })
