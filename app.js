@@ -10,9 +10,9 @@ $('.fa-bars').click(function(){
 })
 
 $('#education').click(function(){
+  $(this).css('display','none')
   $('#stickHere').empty()
   $('#theProjects').empty()
-  $('#education').css('display','none')
   educationArray.forEach(function(education){
     $('#theEducation').append(education.toHtml())
   })
@@ -20,7 +20,7 @@ $('#education').click(function(){
 })
 
 $('#projects').click(function(){
-  $('#projects').css('display','none')
+  $(this).css('display','none')
   $('#stickHere').empty()
   $('#theEducation').empty()
   projectArray.forEach(function(project){
