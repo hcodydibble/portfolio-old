@@ -12,13 +12,20 @@ h1{
   color: currentColor;
   -webkit-text-stroke: 1px #cc73cf;
 }
+h2{
+  display: inline-block;
+  font-size: 4vw;
+  color: currentColor;
+  -webkit-text-stroke: 1px #cc73cf;
+  text-align: center;
+}
+h3{
+  text-align: center;
+}
 img{
-  width: 12vw;
+  width: 35vw;
   max-width: 100vw;
   border: thin #cc73cf solid;
-}
-p{
-  text-align: center;
 }
 .navi{
   display: none;
@@ -36,6 +43,12 @@ p{
 .fa-bars{
   color: black;
 }
+#projectTemplate{
+  display: none;
+}
+#edTemplate{
+  display: none;
+}
 @media all and (min-width: 800px) {
   .fa-bars{
     display: none;
@@ -48,11 +61,18 @@ p{
   }
   h2{
     display: inline-block;
-    font-size: 4vw;
+    font-size: 3vw;
+    color: currentColor;
+    -webkit-text-stroke: 1px #cc73cf;
+    text-align: center;
   }
   header{
     background-size: cover;
     background-position: center;
+  }
+  img{
+    width: 15vw;
+    max-width: 100vw;
   }
   .fa{
     font-size: 2vw;

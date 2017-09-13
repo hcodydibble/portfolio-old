@@ -1,32 +1,57 @@
 'use strict';
-var projectArray = [];
+var projectArray = [], educationArray = [];
 
-function Projects(name, url){
-  this.name = name;
-  this.url = url;
-  projectArray.push(this);
+function Projects(projectData){
+  Object.assign(this, projectData)
 }
-new Projects('Bus Mall','https://hcodydibble.github.io/bus-mall/')
-new Projects('Tennis Anyone?','https://gabrielx52.github.io/tennis_anyone/')
 
-$(document).ready(function(){
-  $('.fa-bars').click(function(){
-    $('.navi').css({'display':'block','padding':'2vh'})
-  })
+$('.fa-bars').click(function(){
+  $('.navi').css({'display':'block','padding':'2vh'})
 })
 
-$(document).ready(function(){
-  $('#education').click(function(){
-    $('.replace').replaceWith('<h2>Education</h2>','<p>This will be my educational history!</p>')
-    $('.delete').remove()
-    $('h2').css({'font-size':'5vw','color':'currentColor','-webkit-text-stroke':'1px #cc73cf','text-align':'center'})
+$('#education').click(function(){
+  $(this).css('display','none')
+  $('#stickHere').empty()
+  $('#theProjects').empty()
+  educationArray.forEach(function(education){
+    $('#theEducation').append(education.toHtml())
   })
+  $('#projects').css('display','block')
 })
 
-$(document).ready(function(){
-  $('#projects').click(function(){
-    $('#stickHere').empty().append('<a href="' + projectArray[0].url + '">' + projectArray[0].name + '</a>','<p>A project where I had to create a random image generator to cycle through a set number of chosen images and allow the user to click on their favorite to vote for it. At the end it will display the number of votes received in a graph and also save the data to local storage so that it will persist through page refreshes</p>','<a href="' + projectArray[1].url + '">' + projectArray[1].name + '</a>','<p>A project where myself and two others created a site that would allow a user to either create or find a game of tennis at their court of choice in the Seattle area</p>')
-    $('p').css({'padding-top':'2vh','margin-bottom':'1vh'})
-    $('a').css('font-size','4vh')
+$('#projects').click(function(){
+  $(this).css('display','none')
+  $('#stickHere').empty()
+  $('#theEducation').empty()
+  projectArray.forEach(function(project){
+    $('#theProjects').append(project.toHtml())
   })
+  $('#education').css('display','block')
+  $('p').css({'padding-top':'1vh','margin-bottom':'1vh'})
+  $('a').css('font-size','4vh')
+})
+
+Projects.prototype.toHtml = function(){
+  if(this.url){
+    var $newProject = $('#projectTemplate').clone()
+    $newProject.attr('id','')
+    $newProject.find('.project a').attr('href',this.url).text(this.name)
+    $newProject.find('#description').html(this.description)
+    return $newProject
+  }else{
+    var $newEd = $('#edTemplate').clone()
+    $newEd.attr('id','')
+    $newEd.find('h2').text(this.name)
+    $newEd.find('.years').text(this.years)
+    $newEd.find('.study').text(this.study)
+    return $newEd
+  }
+}
+
+myInfo.forEach(function(info){
+  if(info.url){
+    projectArray.push(new Projects(info))
+  }else{
+    educationArray.push(new Projects(info))
+  }
 })
