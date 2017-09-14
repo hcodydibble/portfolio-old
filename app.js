@@ -6,12 +6,12 @@ function Projects(projectData){
 }
 
 $('.fa-bars').click(function(){
-  $('.navi').css({'display':'block','padding':'2vh'})
+  $('.navi').toggle(500)
 })
 
 $('#education').click(function(){
   $(this).css('display','none')
-  $('#stickHere').empty()
+  $('#stickHere').hide()
   $('#theProjects').empty()
   educationArray.forEach(function(education){
     $('#theEducation').append(education.toHtml())
@@ -21,7 +21,7 @@ $('#education').click(function(){
 
 $('#projects').click(function(){
   $(this).css('display','none')
-  $('#stickHere').empty()
+  $('#stickHere').hide()
   $('#theEducation').empty()
   projectArray.forEach(function(project){
     $('#theProjects').append(project.toHtml())
@@ -30,6 +30,12 @@ $('#projects').click(function(){
   $('#education').css('display','block')
   $('p').css({'padding-top':'1vh','margin-bottom':'1vh'})
   $('a').css('font-size','4vh')
+})
+
+$('#home').click(function(){
+  $('#theProjects').empty()
+  $('#theEducation').empty()
+  location.reload()
 })
 
 Projects.prototype.toHtml = function(){
