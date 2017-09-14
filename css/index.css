@@ -49,7 +49,8 @@ img{
 #edTemplate{
   display: none;
 }
-@media all and (min-width: 800px) {
+
+@media screen and (min-width: 800px) {
   .fa-bars{
     display: none;
   }
@@ -58,6 +59,14 @@ img{
     margin-top: 2vh;
     cursor: pointer;
     font-size: 4vh;
+  }
+  .fa{
+    font-size: 2vw;
+  }
+  #theProjects{
+    width: 50vw;
+    max-width: 100vw;
+    margin: auto;
   }
   h2{
     display: inline-block;
@@ -73,8 +82,5 @@ img{
   img{
     width: 15vw;
     max-width: 100vw;
-  }
-  .fa{
-    font-size: 2vw;
   }
 }

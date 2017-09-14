@@ -26,6 +26,7 @@ $('#projects').click(function(){
   projectArray.forEach(function(project){
     $('#theProjects').append(project.toHtml())
   })
+  $('p').css('text-indent','3vw')
   $('#education').css('display','block')
   $('p').css({'padding-top':'1vh','margin-bottom':'1vh'})
   $('a').css('font-size','4vh')
@@ -40,10 +41,10 @@ Projects.prototype.toHtml = function(){
     return $newProject
   }else{
     var $newEd = $('#edTemplate').clone()
-    $newEd.attr('id','')
     $newEd.find('h2').text(this.name)
     $newEd.find('.years').text(this.years)
     $newEd.find('.study').text(this.study)
+    $newEd.attr('id','')
     return $newEd
   }
 }
