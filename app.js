@@ -10,48 +10,42 @@ $('.fa-bars').click(function(){
 })
 
 $('#education').click(function(){
-  $(this).css('display','none')
   $('#stickHere').hide()
   $('#theProjects').empty()
   educationArray.forEach(function(education){
     $('#theEducation').append(education.toHtml())
   })
-  $('#projects').css('display','block')
 })
 
 $('#projects').click(function(){
-  $(this).css('display','none')
   $('#stickHere').hide()
   $('#theEducation').empty()
   projectArray.forEach(function(project){
     $('#theProjects').append(project.toHtml())
   })
-  $('p').css('text-indent','3vw')
   $('#education').css('display','block')
-  $('p').css({'padding-top':'1vh','margin-bottom':'1vh'})
   $('a').css('font-size','4vh')
 })
 
 $('#home').click(function(){
   $('#theProjects').empty()
   $('#theEducation').empty()
-  location.reload()
+  $('#stickHere').show()
 })
 
 Projects.prototype.toHtml = function(){
   if(this.url){
-    var $newProject = $('#projectTemplate').clone()
-    $newProject.attr('id','')
-    $newProject.find('.project a').attr('href',this.url).text(this.name)
-    $newProject.find('#description').html(this.description)
-    return $newProject
+    var projectTemp = $('#projectTemplate').html();
+    var projectBlog = Handlebars.compile(projectTemp);
+    var newProject = new Projects(this);
+    var projectPost = projectBlog(newProject);
+    $('#theProjects').append(projectPost);
   }else{
-    var $newEd = $('#edTemplate').clone()
-    $newEd.find('h2').text(this.name)
-    $newEd.find('.years').text(this.years)
-    $newEd.find('.study').text(this.study)
-    $newEd.attr('id','')
-    return $newEd
+    var edTemp = $('#edTemplate').html();
+    var edBlog = Handlebars.compile(edTemp);
+    var newEd = new Projects(this);
+    var edPost = edBlog(newEd);
+    $('#theEducation').append(edPost);
   }
 }
 
