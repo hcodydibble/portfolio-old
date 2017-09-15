@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <meta charset="utf-8">
     <script src="https://use.fontawesome.com/25669ba756.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js" charset="utf-8"></script>
     <meta name="viewport" content="width=device-width, height=device-height" />
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/layout.css">
@@ -17,32 +19,33 @@
       <img src="http://fillmurray.com/200/300" />
       <a href="https://www.linkedin.com/in/hewlette-dibble-70785814a/"<i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
     </header>
-    <section id='stickHere'>
-      <h2 class='replace'>Elementary developer.</h2>
-      <h2 class='delete'>Cat lover.</h2>
-      <h2 class='delete'>Full-time student.</h2>
-      <br />
-      <i id='show' class="fa fa-bars" aria-hidden="true"></i>
-      <p class='delete'>Navigating this crazy school called Code Fellows to have a better shot
-        at a brighter future.</p>
-    </section>
-    <div id='theProjects'></div>
-    <section id='projectTemplate'>
-      <div class='project'>
-        <a href="">Project Name</a>
-        <p id='description'>Project description</p>
-      </div>
-    </section>
-    <div id='theEducation'></div>
-    <section id='edTemplate'>
-      <h2>School</h2>
-      <p class='years'>Years</p>
-      <p class='study'>Study</p>
-    </section>
     <nav>
+        <p id='home' class='navi'>Home</p>
         <p id='education'class='navi'>Education</p>
         <p id='projects' class='navi'>Projects</p>
     </nav>
+    <i class="fa fa-bars" aria-hidden="true"></i>
+    <section id='stickHere'>
+      <h2>Elementary developer.</h2>
+      <h2>Cat lover.</h2>
+      <h2>Full-time student.</h2>
+      <br />
+      <p>Navigating this crazy school called Code Fellows to have a better shot
+        at a brighter future.</p>
+    </section>
+    <div id='theProjects'></div>
+    <script id='projectTemplate' type='text/x-handlebars-template'>
+      <div class='project'>
+        <a href="">{{name}}</a>
+        <p id='description'>{{{description}}}</p>
+      </div>
+    </script>
+    <div id='theEducation'></div>
+    <script id='edTemplate' type='text/x-handlebars-template'>
+      <h2>{{name}}</h2>
+      <p class='years'>{{years}}</p>
+      <p class='study'>{{study}}</p>
+    </script>
   </body>
   <script type="text/javascript" src="info.js" charset="utf-8"></script>
   <script type="text/javascript" src="app.js" charset="utf-8"></script>
