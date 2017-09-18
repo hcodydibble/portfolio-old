@@ -56,3 +56,9 @@ myInfo.forEach(function(info){
     educationArray.push(new Projects(info))
   }
 })
+
+$('#theProjects').hover(function(){
+  $(this).find('img').show();
+}, function(){
+  $(this).find('img').hide();
+});
