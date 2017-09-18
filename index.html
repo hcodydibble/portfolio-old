@@ -3,13 +3,14 @@
   <head>
     <meta charset="utf-8">
     <script src="https://use.fontawesome.com/25669ba756.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Roboto" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js" charset="utf-8"></script>
     <meta name="viewport" content="width=device-width, height=device-height" />
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/layout.css">
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/mobile.css">
+    <link rel="stylesheet" href="/css/desktop.css">
     <title>Hewlette C Dibble</title>
   </head>
   <body>
@@ -36,8 +37,9 @@
     <div id='theProjects'></div>
     <script id='projectTemplate' type='text/x-handlebars-template'>
       <div class='project'>
-        <a href="">{{name}}</a>
+        <a href="{{url}}">{{name}}</a>
         <p id='description'>{{{description}}}</p>
+        <img src='{{projectImg}}' />
       </div>
     </script>
     <div id='theEducation'></div>

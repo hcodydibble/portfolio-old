@@ -2,7 +2,10 @@ header{
   text-align: center;
 }
 h2{
-  text-align: left;
+  text-align: center;
+}
+h3{
+  text-align: center;
 }
 section{
   text-align: center;
@@ -10,8 +13,27 @@ section{
 p{
   text-align: center;
 }
+nav{
+  text-align: center;
+}
+#theEducation{
+  text-align: center;
+}
+
 @media all and (min-width:800px) {
   section{
+    text-align: center;
+  }
+  nav{
+    text-align: center;
+  }
+  h2{
+    text-align: center;
+  }
+  #theEducation{
+    text-align: center;
+  }
+  .project{
     text-align: center;
   }
 }

@@ -1,0 +1,55 @@
+h1{
+  font-size: 12vw;
+  text-shadow: 1px 1px #cc73cf,
+               2px 2px #cc73cf;
+}
+h2{
+  display: inline-block;
+  font-size: 8vw;
+  color: currentColor;
+}
+img{
+  width: 35vw;
+  max-width: 100vw;
+  border: thin black solid;
+  box-shadow: -1px 1px black,
+               -2px 2px black;
+}
+nav{
+  margin: 1vh 0vh;
+}
+nav p{
+  padding: 0vw;
+  background-color: #cbc5d4;
+  color: white;
+}
+.navi{
+  display: none;
+}
+.fa{
+  color: white;
+  font-size: 5vw;
+}
+.fa-github-alt{
+  padding-right: 1vw;
+}
+.fa-linkedin-square{
+  padding-left: 1vw;
+}
+.fa-bars{
+  display: block;
+  color: black;
+  text-align: center;
+}
+.project{
+  text-align: center;
+}
+#projectTemplate{
+  display: none;
+}
+#edTemplate{
+  display: none;
+}
+#theEducation h2{
+  font-size: 8vw;
+}
