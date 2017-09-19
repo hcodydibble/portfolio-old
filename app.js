@@ -48,12 +48,6 @@ Projects.prototype.toHtml = function(){
   }
 }
 
-$('#theProjects').hover(function(){
-  $(this).find('img').show();
-}, function(){
-  $(this).find('img').hide();
-});
-
 $.get('info.json',function(stuff){
   stuff.forEach(function(info){
     if(info.url){
