@@ -13,10 +13,6 @@
   .fa{
     font-size: 2vw;
   }
-  .project img{
-    width: auto;
-    display: none;
-  }
   #theProjects{
     width: 50vw;
     max-width: 100vw;

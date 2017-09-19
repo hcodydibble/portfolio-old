@@ -1,5 +1,5 @@
 'use strict';
-var projectArray = [], educationArray = [];
+let projectArray = [], educationArray = [];
 
 function Projects(projectData){
   Object.assign(this, projectData)
@@ -25,7 +25,6 @@ $('#projects').click(function(){
   projectArray.forEach(function(project){
     $('#theProjects').append(project.toHtml())
   })
-  $('#education').css('display','block')
   $('a').css('font-size','4vh')
 })
 
@@ -37,30 +36,26 @@ $('#home').click(function(){
 
 Projects.prototype.toHtml = function(){
   if(this.url){
-    var projectTemp = $('#projectTemplate').html();
-    var projectBlog = Handlebars.compile(projectTemp);
-    var newProject = new Projects(this);
-    var projectPost = projectBlog(newProject);
+    let projectTemp = $('#projectTemplate').html();
+    let projectBlog = Handlebars.compile(projectTemp);
+    let newProject = new Projects(this);
+    let projectPost = projectBlog(newProject);
     $('#theProjects').append(projectPost);
   }else{
-    var edTemp = $('#edTemplate').html();
-    var edBlog = Handlebars.compile(edTemp);
-    var newEd = new Projects(this);
-    var edPost = edBlog(newEd);
+    let edTemp = $('#edTemplate').html();
+    let edBlog = Handlebars.compile(edTemp);
+    let newEd = new Projects(this);
+    let edPost = edBlog(newEd);
     $('#theEducation').append(edPost);
   }
 }
 
-myInfo.forEach(function(info){
-  if(info.url){
-    projectArray.push(new Projects(info))
-  }else{
-    educationArray.push(new Projects(info))
-  }
+$.get('info.json',function(stuff){
+  stuff.forEach(function(info){
+    if(info.url){
+      projectArray.push(new Projects(info))
+    }else{
+      educationArray.push(new Projects(info))
+    }
+  })
 })
-
-$('#theProjects').hover(function(){
-  $(this).find('img').show();
-}, function(){
-  $(this).find('img').hide();
-});
