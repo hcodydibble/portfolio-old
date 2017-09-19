@@ -12,6 +12,7 @@ $('.fa-bars').click(function(){
 $('#education').click(function(){
   $('#stickHere').hide()
   $('#theProjects').empty()
+  $('#theEducation').empty()
   educationArray.forEach(function(education){
     $('#theEducation').append(education.toHtml())
   })
@@ -20,6 +21,7 @@ $('#education').click(function(){
 $('#projects').click(function(){
   $('#stickHere').hide()
   $('#theEducation').empty()
+  $('#theProjects').empty()
   projectArray.forEach(function(project){
     $('#theProjects').append(project.toHtml())
   })
