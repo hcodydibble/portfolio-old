@@ -50,7 +50,7 @@ Projects.prototype.toHtml = function(){
   }
 }
 
-$.get('public/info.json',function(stuff){
+$.get('info.json',function(stuff){
   stuff.forEach(function(info){
     if(info.url){
       projectArray.push(new Projects(info))
