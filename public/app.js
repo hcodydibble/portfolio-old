@@ -1,9 +1,9 @@
 'use strict';
 
 var app = app || {};
-let projectArray = [], educationArray = [];
 
 (function(module){
+  let projectArray = [], educationArray = [];
 
   function Projects(projectData){
     Object.assign(this, projectData)
