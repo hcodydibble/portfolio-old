@@ -13,26 +13,24 @@ let projectArray = [], educationArray = [];
     $('.navi').toggle(500)
   })
 
-  $('#education').click(function(){
+  $('#education').click(() => {
     $('#stickHere').hide()
     $('#theProjects').empty()
     $('#theEducation').empty()
-    educationArray.forEach(function(education){
-      $('#theEducation').append(education.toHtml())
-    })
+    educationArray.forEach(education =>
+      $('#theEducation').append(education.toHtml()))
   })
 
-  $('#projects').click(function(){
+  $('#projects').click(() => {
     $('#stickHere').hide()
     $('#theEducation').empty()
     $('#theProjects').empty()
-    projectArray.forEach(function(project){
-      $('#theProjects').append(project.toHtml())
-    })
+    projectArray.forEach(project =>
+      $('#theProjects').append(project.toHtml()))
     $('a').css('font-size','4vh')
   })
 
-  $('#home').click(function(){
+  $('#home').click(() => {
     $('#theProjects').empty()
     $('#theEducation').empty()
     $('#stickHere').show()
@@ -55,14 +53,9 @@ let projectArray = [], educationArray = [];
   }
 
 
-  $.get('info.json',function(stuff){
-    stuff.map(function(info){
-      if(info.url){
-        projectArray.push(new Projects(info))
-      }else{
-        educationArray.push(new Projects(info))
-      }
-    })
+  $.get('info.json',stuff => {
+    stuff.map(info => info.url ? projectArray.push(new Projects(info)) : educationArray.push(new Projects(info)))
+
     Projects.numWords = () => {
       return projectArray.map(function(a){
         return a.description.split(' ').length
