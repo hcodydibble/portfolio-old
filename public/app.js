@@ -38,17 +38,11 @@ var app = app || {};
 
   Projects.prototype.toHtml = function(){
     if(this.url){
-      let projectTemp = $('#projectTemplate').html();
-      let projectBlog = Handlebars.compile(projectTemp);
-      let newProject = new Projects(this);
-      let projectPost = projectBlog(newProject);
-      $('#theProjects').append(projectPost);
+      let projectBlog = Handlebars.compile($('#projectTemplate').html());
+      $('#theProjects').append(projectBlog(new Projects(this)));
     }else{
-      let edTemp = $('#edTemplate').html();
-      let edBlog = Handlebars.compile(edTemp);
-      let newEd = new Projects(this);
-      let edPost = edBlog(newEd);
-      $('#theEducation').append(edPost);
+      let edBlog = Handlebars.compile($('#edTemplate').html());
+      $('#theEducation').append(edBlog(new Projects(this)));
     }
   }
 
