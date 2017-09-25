@@ -1,0 +1,22 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "This will be a portfolio website by the end of 301",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hcodydibble/portfolio.git"
+  },
+  "author": "Hewlette Cody Dibble",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hcodydibble/portfolio/issues"
+  },
+  "homepage": "https://github.com/hcodydibble/portfolio#readme",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
