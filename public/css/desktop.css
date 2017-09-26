@@ -21,6 +21,13 @@
   #theEducation{
     padding: 1vh 0vh;
   }
+  a{
+    color: white;
+    text-decoration: none;
+  }
+  a:hover{
+    color: yellow;
+  }
   h1{
     text-shadow: 1px 1px #cc73cf,
                  2px 2px #cc73cf,

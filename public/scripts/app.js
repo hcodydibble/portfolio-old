@@ -13,7 +13,7 @@ var app = app || {};
     $('.navi').toggle(500)
   })
 
-  Projects.myEducation = function(){
+  Projects.myEducation = () =>{
     $('#stickHere').hide()
     $('#theProjects').empty()
     $('#theEducation').empty()
@@ -21,7 +21,7 @@ var app = app || {};
       $('#theEducation').append(education.toHtml()))
   }
 
-  Projects.myProjects = function(){
+  Projects.myProjects = () => {
     $('#stickHere').hide()
     $('#theEducation').empty()
     $('#theProjects').empty()
@@ -30,7 +30,7 @@ var app = app || {};
     $('a').css('font-size','4vh')
   }
 
-  Projects.goHome = function(){
+  Projects.goHome = () => {
     $('#theProjects').empty()
     $('#theEducation').empty()
     $('#stickHere').show()
