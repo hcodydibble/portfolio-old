@@ -13,28 +13,28 @@ var app = app || {};
     $('.navi').toggle(500)
   })
 
-  $('#education').click(() => {
+  Projects.myEducation = function(){
     $('#stickHere').hide()
     $('#theProjects').empty()
     $('#theEducation').empty()
     educationArray.forEach(education =>
       $('#theEducation').append(education.toHtml()))
-  })
+  }
 
-  $('#projects').click(() => {
+  Projects.myProjects = function(){
     $('#stickHere').hide()
     $('#theEducation').empty()
     $('#theProjects').empty()
     projectArray.forEach(project =>
       $('#theProjects').append(project.toHtml()))
     $('a').css('font-size','4vh')
-  })
+  }
 
-  $('#home').click(() => {
+  Projects.goHome = function(){
     $('#theProjects').empty()
     $('#theEducation').empty()
     $('#stickHere').show()
-  })
+  }
 
   Projects.prototype.toHtml = function(){
     if(this.url){
