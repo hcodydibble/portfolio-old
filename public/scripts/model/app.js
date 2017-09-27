@@ -37,7 +37,7 @@ let projectArray = [], educationArray = [], repoArray = [];
     $('#theEducation').empty()
     $('#stickHere').hide()
     let compiled = Handlebars.compile($('#githubTemplate').html());
-    $('#theGithub').append(repoArray.map(compiled))
+    $('#theGithub').append(repoArray.filter(a => a.name !== '').sort().map(compiled))
     repoArray.forEach(a =>
       $('theGithub').append(a))
   }
