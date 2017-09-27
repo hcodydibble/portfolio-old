@@ -1,9 +1,9 @@
 'use strict';
 
 var app = app || {};
+let projectArray = [], educationArray = [], repoArray = [];
 
 (function(module){
-  let projectArray = [], educationArray = [];
 
   function Projects(projectData){
     Object.assign(this, projectData)
@@ -17,6 +17,7 @@ var app = app || {};
     $('#stickHere').hide()
     $('#theProjects').empty()
     $('#theEducation').empty()
+    $('#theGithub').empty()
     educationArray.forEach(education =>
       $('#theEducation').append(education.toHtml()))
   }
@@ -25,9 +26,20 @@ var app = app || {};
     $('#stickHere').hide()
     $('#theEducation').empty()
     $('#theProjects').empty()
+    $('#theGithub').empty()
     projectArray.forEach(project =>
       $('#theProjects').append(project.toHtml()))
     $('a').css('font-size','4vh')
+  }
+
+  Projects.myGithub = () => {
+    $('#theProjects').empty()
+    $('#theEducation').empty()
+    $('#stickHere').hide()
+    let compiled = Handlebars.compile($('#githubTemplate').html());
+    $('#theGithub').append(repoArray.map(compiled))
+    repoArray.forEach(a =>
+      $('theGithub').append(a))
   }
 
   Projects.goHome = () => {
@@ -49,7 +61,6 @@ var app = app || {};
 
   $.get('info.json',stuff => {
     stuff.map(info => info.url ? projectArray.push(new Projects(info)) : educationArray.push(new Projects(info)))
-
     Projects.numWords = () => {
       return projectArray.map(function(a){
         return a.description.split(' ').length
@@ -59,5 +70,10 @@ var app = app || {};
     }
     $('.totals').text(Projects.numWords())
   })
+
+  $.get('/github/user/repos', repos => {
+    repos.forEach(ele => repoArray.push(ele))
+  })
+
   module.Projects = Projects;
 })(app);
