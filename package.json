@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/hcodydibble/portfolio#readme",
   "dependencies": {
-    "express": "^4.15.4"
+    "express": "^4.15.4",
+    "pg": "^7.3.0"
   }
 }
