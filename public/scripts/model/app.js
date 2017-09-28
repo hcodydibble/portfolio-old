@@ -46,7 +46,7 @@ let projectArray = [], educationArray = [], repoArray = [];
   Projects.goHome = () => {
     $('#theProjects').empty()
     $('#theEducation').empty()
-    $('#theEducation').empty()
+    $('#theGithub').empty()
     $('#stickHere').show()
   }
 
