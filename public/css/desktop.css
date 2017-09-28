@@ -21,6 +21,9 @@
   #theEducation{
     padding: 1vh 0vh;
   }
+  #theGithub{
+    text-align: center;
+  }
   a{
     color: white;
     text-decoration: none;
