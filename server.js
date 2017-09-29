@@ -20,6 +20,4 @@ function proxyGitHub(req, res) {
 
 APP.get('*', (request, response) => response.sendFile('index.html', {root: './public'}));
 
-APP.listen(PORT, function(){
-  console.log(`Express server currently running on port ${PORT}`);
-})
+APP.listen(PORT, () => console.log(`Express server currently running on port ${PORT}`))
